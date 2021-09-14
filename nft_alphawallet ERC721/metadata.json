@@ -1,0 +1,12 @@
+{
+    "attributes" : [ {
+      "trait_type" : "Breed",
+      "value" : "Maltipoo"
+    }, {
+      "trait_type" : "Eye color",
+      "value" : "Mocha"
+    } ],
+    "description" : "The world's most adorable and sensitive pup.",
+    "image" : "ipfs://QmSFJH1bpu3x9CztwWTJ1JhpMq1n1QT3T35Syk486LbLjm",
+    "name" : "Feel Somthing different - Bea Miller & Amine"
+}

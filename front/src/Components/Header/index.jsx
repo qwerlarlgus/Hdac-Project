@@ -1,22 +1,47 @@
 import React from 'react';
 import { useHistory } from 'react-router';
+import { Link } from 'react-router-dom';
 import HeaderMenu from './HeaderMenu';
-import { Container, LogoWrapper, MenuWrapper, MenuButton } from './styles';
+import { Container, LogoWrapper, Logo, MenuWrapper, Wrapper } from './styles';
+
+const menuList = [
+  {
+    name: 'COMPANY',
+    url: '/company',
+  },
+  {
+    name: 'MUSIC',
+    url: '/music',
+  },
+  {
+    name: 'ARTIST',
+    url: '/artist',
+  },
+  {
+    name: 'MARKET PLACE',
+    url: '/marketplace',
+  },
+];
 
 const Header = () => {
   const history = useHistory();
 
-  const goMarket = () => {
-    history.push('/marketplace');
+  const goHome = () => {
+    history.push('/');
   };
   return (
     <Container>
-      <LogoWrapper></LogoWrapper>
+      <LogoWrapper onClick={goHome}>
+        <Logo>MU:FUN</Logo>
+      </LogoWrapper>
       <MenuWrapper>
-        <MenuButton>COMPANY</MenuButton>
-        <MenuButton>MUSIC</MenuButton>
-        <MenuButton>ARTIST</MenuButton>
-        <MenuButton onClick={goMarket}>MARKET PLACE</MenuButton>
+        {menuList.map((item, index) => {
+          return (
+            <Wrapper key={index}>
+              <Link to={item.url}>{item.name}</Link>
+            </Wrapper>
+          );
+        })}
       </MenuWrapper>
       <HeaderMenu />
     </Container>

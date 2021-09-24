@@ -17,6 +17,7 @@ const config = {
       '@Pages': path.resolve(__dirname, 'src/Pages'),
       '@Utils': path.resolve(__dirname, 'src/Utils'),
       '@Assets': path.resolve(__dirname, 'src/Assets'),
+      '@Fonts': path.resolve(__dirname, 'src/Fonts'),
     },
   },
   entry: {
@@ -50,7 +51,7 @@ const config = {
         exclude: path.join(__dirname, 'node_modules'),
       },
       {
-        test: /\.(png|jpe?g|gif|ico)$/i,
+        test: /\.(png|jpe?g|gif|ico|mp4)$/i,
         use: [
           {
             loader: 'file-loader',

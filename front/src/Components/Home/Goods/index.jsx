@@ -11,37 +11,46 @@ import {
   ContentsTitle,
   Contents,
 } from './styles';
-import GoodsImage from '@Assets/Img/Goods/goods01.jpg';
+import GoodsImage from '@Assets/Img/Goods/aespa-goods.jpg';
+import GoodsImage02 from '@Assets/Img/Goods/lee-goods.jpg';
+import GoodsImage03 from '@Assets/Img/Goods/weekend-goods.jpg';
+import useScrollFadeIn from '@Hooks/useScrollFadeIn';
 
 const GoodsItems = [
   {
-    id: 1,
+    id: 0,
     url: `${GoodsImage}`,
-    name: 'BTS(뷔) - 자전거',
-    intro: '"뷔가 사용했던 자전거"',
+    name: '에스파(aespa) - Goods',
+    intro: '"에스파의 Goods를 구매해보세요"',
+  },
+  {
+    id: 1,
+    url: `${GoodsImage02}`,
+    name: '이무진 - Goods',
+    intro: '"이무진의 Goods를 구매해보세요"',
   },
   {
     id: 2,
-    url: `${GoodsImage}`,
-    name: 'IU(아이유) - 자전거',
-    intro: '"아이유가 사용했던 자전거"',
-  },
-  {
-    id: 3,
-    url: `${GoodsImage}`,
-    name: '카리나(에스파) - 자전거',
-    intro: '"카리나가 사용했던 자전거"',
+    url: `${GoodsImage03}`,
+    name: '태연 - Goods',
+    intro: '"태연의 Goods를 구매해보세요"',
   },
 ];
 
 const GoodsList = () => {
+  const animatedItem = {
+    0: useScrollFadeIn('left', 1, 0.1),
+    1: useScrollFadeIn('left', 1, 0.2),
+    2: useScrollFadeIn('left', 1, 0.4),
+  };
+
   return (
     <Container>
       <Title>GOODS</Title>
       <ListWrapper>
         {GoodsItems.map((item, index) => {
           return (
-            <Wrapper key={index}>
+            <Wrapper key={index} {...animatedItem[index]}>
               <GoodsWrapper>
                 <ImageWrapper>
                   <Image src={item.url}></Image>

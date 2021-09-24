@@ -9,14 +9,34 @@ export const Container = styled.section`
   background-image: url(${BannerImg});
   background-position: top;
   background-repeat: no-repeat;
+  color: #fff;
+  position: relative;
+`;
+export const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 15%;
+  left: 60%;
 `;
 
-export const NewsList = styled.div``;
+export const Title = styled.div`
+  font-size: 60px;
 
-export const Wrapper = styled.div``;
+  & > span {
+    color: #d96846;
+  }
+`;
 
-export const ThumbWrapper = styled.div``;
+export const TitleTwo = styled.div`
+  text-align: right;
 
-export const Thumbnail = styled.img`
-  width: 100%;
+  & > span {
+    color: #d96846;
+  }
+`;
+
+export const SubTitle = styled.div`
+  font-size: 40px;
+  padding-top: 20px;
 `;
